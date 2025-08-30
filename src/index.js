@@ -9,12 +9,13 @@ import app from './app.js'
 dotenv.config({
     path:'./env'
 })
+
 import connectDB from './db/index.js'
 
 connectDB()
 .then(()=>{
     app.listen(process.env.PORT || 4000,()=>{
-        console.log(" Server started at port ",process.env.PORT || 4000)
+        console.log(" Server started at port",process.env.PORT || 4000)
     })
 })
 .catch((err)=>{
